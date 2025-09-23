@@ -181,6 +181,20 @@ public class Inventory implements Iterable<ItemStack>, Cloneable
         Inventory copy = new Inventory(this.totalSlots());
 
         // Add the missing copy logic (loop)
+        Iterator<ItemStack> it = this.iterator();
+        
+        int index=0;
+
+        while (it.hasNext()) {
+
+            //Do stuff
+            copy.slots.add(this.slots.get(index));
+            
+            index++;
+            
+            it.next();
+        }
+
         return copy;
     }
 
@@ -231,7 +245,7 @@ public class Inventory implements Iterable<ItemStack>, Cloneable
         Iterator<ItemStack> it = this.iterator();
 
         int index = 0;
-        
+
         while (it.hasNext()) {
 
             String itemLine = String.format("  %s%n", slots.get(index));
