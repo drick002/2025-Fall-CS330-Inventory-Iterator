@@ -181,6 +181,11 @@ public class Inventory implements Iterable<ItemStack>, Cloneable
         Inventory copy = new Inventory(this.totalSlots());
 
         // Add the missing copy logic (loop)
+        int postion = 0;
+        for (ItemStack item:this){
+            slots
+        }
+
 
         return copy;
     }
