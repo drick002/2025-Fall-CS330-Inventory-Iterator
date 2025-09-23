@@ -121,9 +121,8 @@ public class Inventory implements Iterable<ItemStack>, Cloneable
     public ItemStack findMatchingItemStack(ItemStack key)
     {
         // Adapt the logic from Assignment 1
-        List<ItemStack> list = new ArrayList<>();
 
-        Iterator<ItemStack> it = list.iterator();
+        Iterator<ItemStack> it = this.iterator();
 
             while (it.hasNext()){
                 ItemStack item = it.next();
@@ -181,12 +180,6 @@ public class Inventory implements Iterable<ItemStack>, Cloneable
         Inventory copy = new Inventory(this.totalSlots());
 
         // Add the missing copy logic (loop)
-        int postion = 0;
-        for (ItemStack item:this){
-            slots
-        }
-
-
         return copy;
     }
 
