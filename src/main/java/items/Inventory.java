@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.Objects;
 
 /**
@@ -226,6 +227,20 @@ public class Inventory implements Iterable<ItemStack>, Cloneable
         strBld.append(summaryLine);
 
         // Add the missing loop
+
+        Iterator<ItemStack> it = this.iterator();
+
+        int index = 0;
+        
+        while (it.hasNext()) {
+
+            String itemLine = String.format("  %s%n", slots.get(index));
+            strBld.append(itemLine);
+
+            index++;
+
+            it.next();
+        }
 
         return strBld.toString();
     }
