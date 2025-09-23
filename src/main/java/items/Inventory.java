@@ -31,6 +31,7 @@ public class Inventory implements Iterable<ItemStack>, Cloneable
     public static void mergeStacks(ItemStack lhs, ItemStack rhs)
     {
         // Refer to the notes from Assignment 1
+        lhs.addItems(rhs.size());
     }
 
     /**
@@ -120,8 +121,18 @@ public class Inventory implements Iterable<ItemStack>, Cloneable
     public ItemStack findMatchingItemStack(ItemStack key)
     {
         // Adapt the logic from Assignment 1
+        List<ItemStack> list = new ArrayList<>();
+
+        Iterator<ItemStack> it = list.iterator();
+
+            while (it.hasNext()){
+                ItemStack item = it.next();
+                if (item.equals(key))
+                return key;
+            }
 
         return null;
+            
     }
 
     /**
