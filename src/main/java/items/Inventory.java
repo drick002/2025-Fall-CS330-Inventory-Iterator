@@ -124,11 +124,11 @@ public class Inventory implements Iterable<ItemStack>, Cloneable
         // Adapt the logic from Assignment 1
 
         Iterator<ItemStack> it = this.iterator();
-
+        
             while (it.hasNext()){
                 ItemStack item = it.next();
                 if (item.equals(key))
-                return key;
+                return item;
             }
 
         return null;
